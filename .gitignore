@@ -1,0 +1,36 @@
+# Benchmark outputs and generated artifacts
+/output/
+
+# Local/temporary work directories
+/src/tmp/
+/tmp/
+
+# Large local Python/runtime environments
+/src/cudaq_hostlike_py313/
+/.venv/
+/venv/
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.o
+*.a
+*.so.tmp
+
+# Logs and scratch files
+*.log
+*.tmp
+*.prof

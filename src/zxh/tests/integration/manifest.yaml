@@ -1,0 +1,70 @@
+version: 1
+
+defaults:
+  shots: 2048
+  timeout_s: 20
+  stop_on_error: true
+
+cases:
+  - id: x_1_delta
+    qasm: tests/integration/cases/x_1_delta.qasm
+    suite: correctness_smoke
+    oracle:
+      type: delta
+      expected: "1"
+
+  - id: h_1_balanced
+    qasm: tests/integration/cases/h_1_balanced.qasm
+    suite: correctness_smoke
+    oracle:
+      type: distribution
+      tolerance_abs: 0.15
+      expected:
+        "0": 0.5
+        "1": 0.5
+    seed_repro:
+      seed: 20260316
+      shots: 64
+      repeats: 2
+
+  - id: bell_2_support
+    qasm: tests/integration/cases/bell_2_support.qasm
+    suite: correctness_smoke
+    oracle:
+      type: support
+      allowed:
+        - "00"
+        - "11"
+
+  - id: u3_1_balanced
+    qasm: tests/integration/cases/u3_1_balanced.qasm
+    suite: correctness_smoke
+    oracle:
+      type: distribution
+      tolerance_abs: 0.15
+      expected:
+        "0": 0.5
+        "1": 0.5
+
+  - id: h_11_inter_worker_delta
+    qasm: tests/integration/cases/h_11_inter_worker_delta.qasm
+    suite: correctness_smoke
+    oracle:
+      type: delta
+      expected: "00000000000"
+
+smoke_cases:
+  - case_id: x_1_delta
+    backends: [single, omp, mpi, mpi_omp, cuda, mpi_cuda]
+
+  - case_id: h_1_balanced
+    backends: [single, omp, mpi, mpi_omp, cuda, mpi_cuda]
+
+  - case_id: bell_2_support
+    backends: [single, omp, mpi, mpi_omp, cuda, mpi_cuda]
+
+  - case_id: u3_1_balanced
+    backends: [single, omp, mpi, mpi_omp, cuda, mpi_cuda]
+
+  - case_id: h_11_inter_worker_delta
+    backends: [mpi, mpi_omp]

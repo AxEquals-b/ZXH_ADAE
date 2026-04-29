@@ -1,0 +1,27 @@
+version: 1
+suite_id: qft_cuda
+name: benchmark_qft_cuda
+summary: Single-GPU CUDA benchmark suite for QFT family (20-32 qubits)
+
+backend: cuda
+workloads:
+  - qft_n20
+  - qft_n21
+  - qft_n22
+  - qft_n23
+  - qft_n24
+  - qft_n25
+  - qft_n26
+  - qft_n27
+  - qft_n28
+  - qft_n29
+  - qft_n30
+  - qft_n31
+  - qft_n32
+metrics: [compile_time_ms, execute_time_ms, sample_time_ms, total_time_ms]
+
+shots: 256
+warmup: 1
+repeats: 5
+opt_level: 1
+timeout_s: 300

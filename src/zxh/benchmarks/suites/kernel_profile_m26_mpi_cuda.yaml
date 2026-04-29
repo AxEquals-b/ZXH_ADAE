@@ -1,0 +1,22 @@
+version: 1
+suite_id: kernel_profile_m26_mpi_cuda
+name: benchmark_kernel_profile_m26_mpi_cuda
+summary: Kernel-focused mpi_cuda suite at M=26 for Rz, CRz, H-intra, H-inter, and H-expand-only circuits
+
+backend: mpi_cuda
+deployment:
+  nnodes: 2
+  ntasks_per_node: 8
+workloads:
+  - kp_rz_n26_M26
+  - kp_crz_n26_M26
+  - kp_h_intra_n26_M26
+  - kp_h_inter_n26_M26
+  - kp_h_expand_only_n26_M26
+metrics: [compile_time_ms, execute_time_ms, sample_time_ms, total_time_ms]
+
+shots: 256
+warmup: 1
+repeats: 5
+opt_level: 1
+timeout_s: 1800

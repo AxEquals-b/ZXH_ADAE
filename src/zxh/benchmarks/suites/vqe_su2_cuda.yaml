@@ -1,0 +1,27 @@
+version: 1
+suite_id: vqe_su2_cuda
+name: benchmark_vqe_su2_cuda
+summary: Single-GPU CUDA benchmark suite for VQE SU2 family (20-32 qubits)
+
+backend: cuda
+workloads:
+  - vqe_su2_n20
+  - vqe_su2_n21
+  - vqe_su2_n22
+  - vqe_su2_n23
+  - vqe_su2_n24
+  - vqe_su2_n25
+  - vqe_su2_n26
+  - vqe_su2_n27
+  - vqe_su2_n28
+  - vqe_su2_n29
+  - vqe_su2_n30
+  - vqe_su2_n31
+  - vqe_su2_n32
+metrics: [compile_time_ms, execute_time_ms, sample_time_ms, total_time_ms]
+
+shots: 256
+warmup: 1
+repeats: 5
+opt_level: 1
+timeout_s: 300

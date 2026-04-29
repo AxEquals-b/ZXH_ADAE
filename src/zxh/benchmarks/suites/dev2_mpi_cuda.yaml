@@ -1,0 +1,25 @@
+version: 1
+suite_id: dev2_mpi_cuda
+name: benchmark_dev2_mpi_cuda
+summary: Development-facing mpi_cuda benchmark suite for bundled QASM circuits with 25-31 active qubits
+
+backend: mpi_cuda
+deployment:
+  nnodes: 2
+  ntasks_per_node: 4
+workloads:
+  - qc_knn_n25_M25
+  - qc_swap_test_n25_M25
+  - qc_multiplier_n45_M26
+  - qc_ising_n26_M26
+  - qc_wstate_n27_M26
+  - qc_qft_n29_M29
+  - qc_bv_n30_M30
+  - qc_knn_n31_M31
+metrics: [compile_time_ms, execute_time_ms, sample_time_ms, total_time_ms]
+
+shots: 4096
+warmup: 1
+repeats: 5
+opt_level: 1
+timeout_s: 300

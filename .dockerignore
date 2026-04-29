@@ -1,0 +1,10 @@
+.git
+output
+src/tmp
+src/**/__pycache__
+*.pyc
+.pytest_cache
+.mypy_cache
+.ruff_cache
+Dockerfile
+README.md

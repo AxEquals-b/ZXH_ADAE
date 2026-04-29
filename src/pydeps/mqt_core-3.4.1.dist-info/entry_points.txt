@@ -1,0 +1,3 @@
+[console_scripts]
+mqt-core-cli = mqt.core.__main__:main
+

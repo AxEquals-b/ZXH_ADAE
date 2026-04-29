@@ -1,0 +1,3 @@
+[qiskit.transpiler.scheduling]
+zxh_post = zxhsim.qiskit_backend:ZXHPostSchedulingPlugin
+

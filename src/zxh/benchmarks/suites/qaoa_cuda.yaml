@@ -1,0 +1,27 @@
+version: 1
+suite_id: qaoa_cuda
+name: benchmark_qaoa_cuda
+summary: Single-GPU CUDA benchmark suite for QAOA family (20-32 qubits)
+
+backend: cuda
+workloads:
+  - qaoa_n20
+  - qaoa_n21
+  - qaoa_n22
+  - qaoa_n23
+  - qaoa_n24
+  - qaoa_n25
+  - qaoa_n26
+  - qaoa_n27
+  - qaoa_n28
+  - qaoa_n29
+  - qaoa_n30
+  - qaoa_n31
+  - qaoa_n32
+metrics: [compile_time_ms, execute_time_ms, sample_time_ms, total_time_ms]
+
+shots: 256
+warmup: 1
+repeats: 5
+opt_level: 1
+timeout_s: 300

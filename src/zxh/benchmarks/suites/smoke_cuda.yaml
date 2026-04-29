@@ -1,0 +1,14 @@
+version: 1
+suite_id: smoke_cuda
+name: benchmark_smoke_cuda
+summary: Minimal benchmark smoke suite for the cuda backend
+
+backend: cuda
+workloads: [x_1_delta]
+metrics: [compile_time_ms, execute_time_ms, sample_time_ms, total_time_ms]
+
+shots: 256
+warmup: 0
+repeats: 1
+opt_level: 1
+timeout_s: 20

@@ -1,0 +1,21 @@
+# Ignore this files:
+.vscode
+*.o
+*.a
+*.so
+*.swp
+*.exe
+*.log
+*.txt
+*.pdf
+*.png
+*.mod
+*.cache/
+*compile_commands.json
+*.clangd
+*.clangd.in
+build*/
+test/*
+env.sh
+
+!CMakeLists.txt

@@ -1,0 +1,51 @@
+from __future__ import annotations
+
+
+ZXH_FRONTEND_GATES = (
+    "barrier",
+    "measure",
+    "reset",
+    "id",
+    "x",
+    "cx",
+    "swap",
+    "h",
+    "z",
+    "cz",
+    "rz",
+    "rx",
+    "ry",
+    "p",
+    "u1",
+    "u2",
+    "s",
+    "sdg",
+    "t",
+    "tdg",
+    "u",
+    "u3",
+    "rzz",
+    "cp",
+    "crz",
+    "ccz",
+    "ccx",
+)
+
+
+ZXH_NATIVE_GATES = (
+    "barrier",
+    "measure",
+    "reset",
+    "id",
+    "x",
+    "cx",
+    "h",
+    "z",
+    "rz",
+    "rx",
+    "p",
+    "u",
+    "u3",
+    "cp",
+    "crz",
+)

@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: qblaze
+Version: 0.1.0
+Keywords: Development Status :: 3 - Alpha,Intended Audience :: Developers,Intended Audience :: Science/Research,License :: OSI Approved :: Apache Software License,Programming Language :: Rust,Programming Language :: C,Programming Language :: Python :: 3.10,Programming Language :: Python :: 3.11,Programming Language :: Python :: 3.12,Programming Language :: Python :: 3.13,Programming Language :: Python :: 3.14,Topic :: Scientific/Engineering :: Quantum Computing,Typing :: Typed
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: qiskit
+Requires-Dist: qiskit<3.0,>=1.4; extra == "qiskit"
+Requires-Dist: numpy<3.0,>=1.26; extra == "qiskit"
+Dynamic: license-file
+
+Overview
+---
+
+**qblaze** is a scalable, high-performance simulator for quantum circuits, utilizing a sparse state vector representation.
+
+
+Features
+---
+- Blazingly fast quantum simulation using a sparse representation.
+- Multithreading support with efficient scaling.
+- Bindings for Python (≥3.10), Rust, and C.
+- Qiskit circuit simulation.
+
+
+Documentation
+---
+
+The documentation is available on [qblaze.org](https://qblaze.org).
+
+
+License
+---
+[Apache License, Version 2.0](https://opensource.org/license/apache-2-0).

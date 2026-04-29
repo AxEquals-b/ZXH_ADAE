@@ -1,0 +1,795 @@
+version: 1
+
+defaults:
+  shots: 256
+  warmup: 1
+  repeats: 2
+  timeout_s: 20
+  opt_level: 1
+  stop_on_error: true
+  output_root: build/benchmarks
+
+workloads:
+  - id: x_1_delta
+    family_id: trivial_gate
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/x_1_delta.qasm
+    params:
+      nqubits: 1
+      depth_hint: 1
+
+  - id: h_1_balanced
+    family_id: local_superposition
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/h_1_balanced.qasm
+    params:
+      nqubits: 1
+      depth_hint: 1
+
+  - id: bell_2_support
+    family_id: small_entanglement
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/bell_2_support.qasm
+    params:
+      nqubits: 2
+      depth_hint: 2
+
+  - id: h_11_inter_worker_delta
+    family_id: inter_worker_regression
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/h_11_inter_worker_delta.qasm
+    params:
+      nqubits: 11
+      depth_hint: 22
+
+  - id: ghz_n16
+    family_id: ghz_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/ghz_n16.qasm
+    params:
+      nqubits: 16
+      depth_hint: 16
+
+  - id: ghz_n20
+    family_id: ghz_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/ghz_n20.qasm
+    params:
+      nqubits: 20
+      depth_hint: 20
+
+  - id: ghz_n24
+    family_id: ghz_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/ghz_n24.qasm
+    params:
+      nqubits: 24
+      depth_hint: 24
+
+  - id: ghz_n28
+    family_id: ghz_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/ghz_n28.qasm
+    params:
+      nqubits: 28
+      depth_hint: 28
+
+  - id: ghz_n32
+    family_id: ghz_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/ghz_n32.qasm
+    params:
+      nqubits: 32
+      depth_hint: 32
+
+  - id: qft_n12
+    family_id: qft_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qft_n12.qasm
+    params:
+      nqubits: 12
+      depth_hint: 84
+
+  - id: qft_n16
+    family_id: qft_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qft_n16.qasm
+    params:
+      nqubits: 16
+      depth_hint: 144
+
+  - id: qft_n20
+    family_id: qft_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qft_n20.qasm
+    params:
+      nqubits: 20
+      depth_hint: 220
+
+  - id: qft_n21
+    family_id: qft_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qft_n21.qasm
+    params:
+      nqubits: 21
+      depth_hint: 241
+
+  - id: qft_n22
+    family_id: qft_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qft_n22.qasm
+    params:
+      nqubits: 22
+      depth_hint: 264
+
+  - id: qft_n23
+    family_id: qft_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qft_n23.qasm
+    params:
+      nqubits: 23
+      depth_hint: 287
+
+  - id: qft_n24
+    family_id: qft_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qft_n24.qasm
+    params:
+      nqubits: 24
+      depth_hint: 312
+
+  - id: qft_n25
+    family_id: qft_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qft_n25.qasm
+    params:
+      nqubits: 25
+      depth_hint: 337
+
+  - id: qft_n26
+    family_id: qft_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qft_n26.qasm
+    params:
+      nqubits: 26
+      depth_hint: 364
+
+  - id: qft_n27
+    family_id: qft_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qft_n27.qasm
+    params:
+      nqubits: 27
+      depth_hint: 391
+
+  - id: qft_n28
+    family_id: qft_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qft_n28.qasm
+    params:
+      nqubits: 28
+      depth_hint: 420
+
+  - id: qft_n29
+    family_id: qft_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qft_n29.qasm
+    params:
+      nqubits: 29
+      depth_hint: 449
+
+  - id: qft_n30
+    family_id: qft_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qft_n30.qasm
+    params:
+      nqubits: 30
+      depth_hint: 480
+
+  - id: qft_n31
+    family_id: qft_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qft_n31.qasm
+    params:
+      nqubits: 31
+      depth_hint: 511
+
+  - id: qft_n32
+    family_id: qft_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qft_n32.qasm
+    params:
+      nqubits: 32
+      depth_hint: 544
+
+  - id: qaoa_n20
+    family_id: qaoa_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qaoa_n20.qasm
+    params:
+      nqubits: 20
+      depth_hint: 244
+
+  - id: qaoa_n21
+    family_id: qaoa_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qaoa_n21.qasm
+    params:
+      nqubits: 21
+      depth_hint: 263
+
+  - id: qaoa_n22
+    family_id: qaoa_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qaoa_n22.qasm
+    params:
+      nqubits: 22
+      depth_hint: 320
+
+  - id: qaoa_n23
+    family_id: qaoa_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qaoa_n23.qasm
+    params:
+      nqubits: 23
+      depth_hint: 307
+
+  - id: qaoa_n24
+    family_id: qaoa_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qaoa_n24.qasm
+    params:
+      nqubits: 24
+      depth_hint: 338
+
+  - id: qaoa_n25
+    family_id: qaoa_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qaoa_n25.qasm
+    params:
+      nqubits: 25
+      depth_hint: 363
+
+  - id: qaoa_n26
+    family_id: qaoa_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qaoa_n26.qasm
+    params:
+      nqubits: 26
+      depth_hint: 378
+
+  - id: qaoa_n27
+    family_id: qaoa_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qaoa_n27.qasm
+    params:
+      nqubits: 27
+      depth_hint: 399
+
+  - id: qaoa_n28
+    family_id: qaoa_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qaoa_n28.qasm
+    params:
+      nqubits: 28
+      depth_hint: 446
+
+  - id: qaoa_n29
+    family_id: qaoa_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qaoa_n29.qasm
+    params:
+      nqubits: 29
+      depth_hint: 483
+
+  - id: qaoa_n30
+    family_id: qaoa_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qaoa_n30.qasm
+    params:
+      nqubits: 30
+      depth_hint: 510
+
+  - id: qaoa_n31
+    family_id: qaoa_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qaoa_n31.qasm
+    params:
+      nqubits: 31
+      depth_hint: 525
+
+  - id: qaoa_n32
+    family_id: qaoa_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qaoa_n32.qasm
+    params:
+      nqubits: 32
+      depth_hint: 538
+
+  - id: vqe_su2_n20
+    family_id: vqe_su2_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_su2_n20.qasm
+    params:
+      nqubits: 20
+      depth_hint: 137
+
+  - id: vqe_su2_n21
+    family_id: vqe_su2_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_su2_n21.qasm
+    params:
+      nqubits: 21
+      depth_hint: 144
+
+  - id: vqe_su2_n22
+    family_id: vqe_su2_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_su2_n22.qasm
+    params:
+      nqubits: 22
+      depth_hint: 151
+
+  - id: vqe_su2_n23
+    family_id: vqe_su2_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_su2_n23.qasm
+    params:
+      nqubits: 23
+      depth_hint: 158
+
+  - id: vqe_su2_n24
+    family_id: vqe_su2_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_su2_n24.qasm
+    params:
+      nqubits: 24
+      depth_hint: 165
+
+  - id: vqe_su2_n25
+    family_id: vqe_su2_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_su2_n25.qasm
+    params:
+      nqubits: 25
+      depth_hint: 172
+
+  - id: vqe_su2_n26
+    family_id: vqe_su2_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_su2_n26.qasm
+    params:
+      nqubits: 26
+      depth_hint: 179
+
+  - id: vqe_su2_n27
+    family_id: vqe_su2_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_su2_n27.qasm
+    params:
+      nqubits: 27
+      depth_hint: 186
+
+  - id: vqe_su2_n28
+    family_id: vqe_su2_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_su2_n28.qasm
+    params:
+      nqubits: 28
+      depth_hint: 193
+
+  - id: vqe_su2_n29
+    family_id: vqe_su2_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_su2_n29.qasm
+    params:
+      nqubits: 29
+      depth_hint: 200
+
+  - id: vqe_su2_n30
+    family_id: vqe_su2_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_su2_n30.qasm
+    params:
+      nqubits: 30
+      depth_hint: 207
+
+  - id: vqe_su2_n31
+    family_id: vqe_su2_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_su2_n31.qasm
+    params:
+      nqubits: 31
+      depth_hint: 214
+
+  - id: vqe_su2_n32
+    family_id: vqe_su2_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_su2_n32.qasm
+    params:
+      nqubits: 32
+      depth_hint: 221
+
+  - id: vqe_two_local_n20
+    family_id: vqe_two_local_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_two_local_n20.qasm
+    params:
+      nqubits: 20
+      depth_hint: 650
+
+  - id: vqe_two_local_n21
+    family_id: vqe_two_local_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_two_local_n21.qasm
+    params:
+      nqubits: 21
+      depth_hint: 714
+
+  - id: vqe_two_local_n22
+    family_id: vqe_two_local_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_two_local_n22.qasm
+    params:
+      nqubits: 22
+      depth_hint: 781
+
+  - id: vqe_two_local_n23
+    family_id: vqe_two_local_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_two_local_n23.qasm
+    params:
+      nqubits: 23
+      depth_hint: 851
+
+  - id: vqe_two_local_n24
+    family_id: vqe_two_local_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_two_local_n24.qasm
+    params:
+      nqubits: 24
+      depth_hint: 924
+
+  - id: vqe_two_local_n25
+    family_id: vqe_two_local_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_two_local_n25.qasm
+    params:
+      nqubits: 25
+      depth_hint: 1000
+
+  - id: vqe_two_local_n26
+    family_id: vqe_two_local_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_two_local_n26.qasm
+    params:
+      nqubits: 26
+      depth_hint: 1079
+
+  - id: vqe_two_local_n27
+    family_id: vqe_two_local_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_two_local_n27.qasm
+    params:
+      nqubits: 27
+      depth_hint: 1161
+
+  - id: vqe_two_local_n28
+    family_id: vqe_two_local_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_two_local_n28.qasm
+    params:
+      nqubits: 28
+      depth_hint: 1246
+
+  - id: vqe_two_local_n29
+    family_id: vqe_two_local_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_two_local_n29.qasm
+    params:
+      nqubits: 29
+      depth_hint: 1334
+
+  - id: vqe_two_local_n30
+    family_id: vqe_two_local_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_two_local_n30.qasm
+    params:
+      nqubits: 30
+      depth_hint: 1425
+
+  - id: vqe_two_local_n31
+    family_id: vqe_two_local_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_two_local_n31.qasm
+    params:
+      nqubits: 31
+      depth_hint: 1519
+
+  - id: vqe_two_local_n32
+    family_id: vqe_two_local_scaling
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/vqe_two_local_n32.qasm
+    params:
+      nqubits: 32
+      depth_hint: 1616
+
+  - id: qc_bigadder_n18_M16
+    family_id: arithmetic_adder
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/bigadder_n18.qasm
+    params:
+      M: 16
+      circuit_qubits: 18
+
+  - id: qc_dnn_n16_M16
+    family_id: dnn
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/dnn_n16.qasm
+    params:
+      M: 16
+      circuit_qubits: 16
+
+  - id: qc_qft_n18_M18
+    family_id: qft
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qft_n18.qasm
+    params:
+      M: 18
+      circuit_qubits: 18
+
+  - id: qc_bv_n19_M19
+    family_id: bernstein_vazirani
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/bv_n19.qasm
+    params:
+      M: 19
+      circuit_qubits: 19
+
+  - id: qc_adder_n28_M24
+    family_id: arithmetic_adder
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/adder_n28.qasm
+    params:
+      M: 24
+      circuit_qubits: 28
+
+  - id: qc_knn_n25_M25
+    family_id: knn
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/knn_n25.qasm
+    params:
+      M: 25
+      circuit_qubits: 25
+
+  - id: qc_swap_test_n25_M25
+    family_id: swap_test
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/swap_test_n25.qasm
+    params:
+      M: 25
+      circuit_qubits: 25
+
+  - id: qc_multiplier_n45_M26
+    family_id: multiplier
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/multiplier_n45.qasm
+    params:
+      M: 26
+      circuit_qubits: 45
+
+  - id: qc_ising_n26_M26
+    family_id: ising
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/ising_n26.qasm
+    params:
+      M: 26
+      circuit_qubits: 26
+
+  - id: qc_wstate_n27_M26
+    family_id: wstate
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/wstate_n27.qasm
+    params:
+      M: 26
+      circuit_qubits: 27
+
+  - id: qc_qft_n29_M29
+    family_id: qft
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/qft_n29.qasm
+    params:
+      M: 29
+      circuit_qubits: 29
+
+  - id: qc_bv_n30_M30
+    family_id: bernstein_vazirani
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/bv_n30.qasm
+    params:
+      M: 30
+      circuit_qubits: 30
+
+  - id: qc_knn_n31_M31
+    family_id: knn
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/knn_n31.qasm
+    params:
+      M: 31
+      circuit_qubits: 31
+
+  - id: kp_rz_n26_M26
+    family_id: kernel_profile_rz
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/kernel_rz_dom_n26.qasm
+    params:
+      M: 26
+      circuit_qubits: 26
+      dominant_kernel: rz_block
+
+  - id: kp_crz_n26_M26
+    family_id: kernel_profile_crz
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/kernel_crz_dom_n26.qasm
+    params:
+      M: 26
+      circuit_qubits: 26
+      dominant_kernel: crz_block
+
+  - id: kp_h_intra_n26_M26
+    family_id: kernel_profile_h_intra
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/kernel_h_intra_dom_n26.qasm
+    params:
+      M: 26
+      circuit_qubits: 26
+      dominant_kernel: h_block_intra
+
+  - id: kp_h_inter_n26_M26
+    family_id: kernel_profile_h_inter
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/kernel_h_inter_dom_n26.qasm
+    params:
+      M: 26
+      circuit_qubits: 26
+      dominant_kernel: h_inter_segment
+
+  - id: kp_rz_n30_M30
+    family_id: kernel_profile_rz
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/kernel_rz_dom_n30.qasm
+    params:
+      M: 30
+      circuit_qubits: 30
+      dominant_kernel: rz_block
+
+  - id: kp_crz_n30_M30
+    family_id: kernel_profile_crz
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/kernel_crz_dom_n30.qasm
+    params:
+      M: 30
+      circuit_qubits: 30
+      dominant_kernel: crz_block
+
+  - id: kp_h_intra_n30_M30
+    family_id: kernel_profile_h_intra
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/kernel_h_intra_dom_n30.qasm
+    params:
+      M: 30
+      circuit_qubits: 30
+      dominant_kernel: h_block_intra
+
+  - id: kp_h_inter_n30_M30
+    family_id: kernel_profile_h_inter
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/kernel_h_inter_dom_n30.qasm
+    params:
+      M: 30
+      circuit_qubits: 30
+      dominant_kernel: h_inter_segment
+
+  - id: kp_h_expand_only_n26_M26
+    family_id: kernel_profile_h_expand
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/kernel_h_expand_only_n26.qasm
+    params:
+      M: 26
+      circuit_qubits: 26
+      dominant_kernel: h_expand_only
+
+  - id: kp_h_expand_only_n30_M30
+    family_id: kernel_profile_h_expand
+    source:
+      kind: static_qasm
+      path: benchmarks/workloads/qasm/kernel_h_expand_only_n30.qasm
+    params:
+      M: 30
+      circuit_qubits: 30
+      dominant_kernel: h_expand_only

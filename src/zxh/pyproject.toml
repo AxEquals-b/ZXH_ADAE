@@ -1,0 +1,11 @@
+[build-system]
+requires = ["scikit-build-core>=0.11", "pybind11>=3.0"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "zxhsim"
+version = "0.4.3"
+description="A state vector based quantum circuit simulator"
+
+[project.entry-points."qiskit.transpiler.scheduling"]
+zxh_post = "zxhsim.qiskit_backend:ZXHPostSchedulingPlugin"
