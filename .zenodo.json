@@ -1,0 +1,28 @@
+{
+  "title": "ZXH-Sim ADAE Artifact",
+  "upload_type": "software",
+  "version": "1.0.0",
+  "access_right": "open",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "AxEquals-b"
+    }
+  ],
+  "description": "Artifact harness for reproducing the ZXH-Sim evaluation. The repository contains the ZXH-Sim source snapshot, benchmark runners, suite definitions, Docker overlay build files, aggregation scripts, and plotting scripts for the MQT Bench based artifact experiments. The NVIDIA cuQuantum Appliance base image is not redistributed and must be obtained separately through NVIDIA NGC.",
+  "keywords": [
+    "quantum simulation",
+    "state-vector simulation",
+    "CUDA",
+    "cuQuantum",
+    "MQT Bench",
+    "artifact evaluation"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/AxEquals-b/ZXH_ADAE",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite it using the metadata from this file."
+title: "ZXH-Sim ADAE Artifact"
+type: software
+version: "1.0.0"
+date-released: 2026-04-29
+authors:
+  - name: "AxEquals-b"
+repository-code: "https://github.com/AxEquals-b/ZXH_ADAE"
+url: "https://github.com/AxEquals-b/ZXH_ADAE"
+abstract: >-
+  Artifact harness for reproducing the ZXH-Sim evaluation. The repository
+  contains the ZXH-Sim source snapshot, benchmark runners, suite definitions,
+  Docker overlay build files, aggregation scripts, and plotting scripts for the
+  MQT Bench based artifact experiments.
+keywords:
+  - quantum simulation
+  - state-vector simulation
+  - CUDA
+  - cuQuantum
+  - MQT Bench
+  - artifact evaluation
