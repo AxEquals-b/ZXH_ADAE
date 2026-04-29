@@ -22,6 +22,11 @@ if [[ ! -d "${PYDEPS_DIR}" ]]; then
 	exit 1
 fi
 
+# The cuQuantum Appliance container runs as its internal cuquantum user.
+# Make the bind-mounted overlay writable even when a release zip was
+# extracted by a different host UID.
+chmod -R a+rwX "${PYDEPS_DIR}"
+
 docker_args=(
 	--rm
 	--gpus all

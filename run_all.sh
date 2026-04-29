@@ -16,6 +16,8 @@ RUN_ABLATIONS="${RUN_ABLATIONS:-1}"
 RUN_P_BATCH="${RUN_P_BATCH:-1}"
 
 mkdir -p "${ROOT_DIR}/output/results" "${ROOT_DIR}/output/circuits" "${ROOT_DIR}/output/figures"
+# The container may use a different UID than the host user that extracted the artifact.
+chmod -R a+rwX "${ROOT_DIR}/output"
 
 docker run --rm \
   --gpus all \

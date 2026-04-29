@@ -9,6 +9,8 @@ ABLATION_RUN_ID="${ABLATION_RUN_ID:-latest}"
 P_BATCH_RUN_ID="${P_BATCH_RUN_ID:-${ZXH_RUN_ID}}"
 
 mkdir -p "${ROOT_DIR}/output/figures"
+# The container may use a different UID than the host user that extracted the artifact.
+chmod -R a+rwX "${ROOT_DIR}/output"
 
 docker run --rm \
   --gpus all \

@@ -54,6 +54,8 @@ ADAE_IMAGE=my-zxh-artifact:latest ./aggregate.sh
 
 This script first rebuilds the ZXH-Sim Python overlay into `src/pydeps` by invoking `install_zxh.sh`. It then builds a Docker image using `Dockerfile`. The Docker image copies `src/` into `/home/cuquantum/src`; at runtime only `output/` is mounted, so the source overlay used by a run is the one embedded in the prepared image.
 
+The scripts automatically relax permissions on the bind-mounted `src/pydeps` and `output/` directories so that the cuQuantum Appliance container can write to them even if the release archive was extracted by a different host UID.
+
 Useful environment variables:
 
 - `CUQUANTUM_IMAGE`: base image, default `nvcr.io/nvidia/cuquantum-appliance:25.11-x86_64`.
