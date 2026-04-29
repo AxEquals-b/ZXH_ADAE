@@ -24,5 +24,6 @@
       "relation": "isSupplementTo",
       "resource_type": "software"
     }
-  ]
+  ],
+  "license": "mit"
 }
